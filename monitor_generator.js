@@ -34,13 +34,13 @@ function literalString(value) {
   return value;
 }
 
-function assignmentString(key, value) {
+export function assignmentString(key, value) {
   if (value === null) return "";
   const displayValue = literalString(value);
   return `${key} = ${displayValue}\n`;
 }
 
-function convertMapping(mappingName, mapping) {
+export function convertMapping(mappingName, mapping) {
   let result = "\n";
   Object.entries(mapping).forEach(([key, value]) => {
     result += assignmentString(key, value);
